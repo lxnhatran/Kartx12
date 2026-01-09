@@ -31,7 +31,7 @@
   .header-logo{
     transform: translateY(20px) !important; /* + = weiter runter */
   }
-  
+
   .header-logo-image{
     height: 85px !important;
   }
@@ -344,10 +344,12 @@
   }
 }
 
-.video-section{
-  background-color: #6cccdb;
-  padding: 80px 0;     /* 🔑 sorgt dafür, dass Banner sichtbar bleibt */
+@media (max-width: 768px){
+  .video-section{
+    padding: 56px 0 !important;  /* z.B. 50-60px */
+  }
 }
+
 
 .vs-video{
   position: relative;
@@ -693,4 +695,32 @@
 
 @media (min-width: 769px) {
   /* Desktop bleibt original */
+}
+
+/* ===== MOBILE: Header sauber + Burger auf Logo-Höhe + weniger Abstand nach unten ===== */
+@media (max-width: 768px){
+
+  /* Stell hier ein, wie weit Logo+Burger runter sollen */
+  #header{ 
+    --logoShift: 18px;        /* <- höher/niedriger: z.B. 12px / 24px */
+    padding: 14px 0 !important;
+    min-height: auto !important;      /* killt 200px */
+  }
+
+  /* Logo: kein riesen Padding mehr, nur gezielt verschieben */
+  .header-logo{
+    padding: 0 !important;            /* killt 90px 0 */
+    transform: translateY(var(--logoShift)) !important;
+  }
+
+  /* Burger: exakt denselben Shift mitnehmen -> gleiche Höhe wie Logo */
+  #header::after{
+    top: calc(50% + var(--logoShift)) !important;
+  }
+
+  /* Weniger Abstand zwischen Header und dem Bereich "kartx12™" + Buttons */
+  #product-hero{
+    margin-top: 0 !important;         /* falls irgendwo was drauf liegt */
+    padding-top: 0 !important;
+  }
 }
