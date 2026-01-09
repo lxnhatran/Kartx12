@@ -658,3 +658,8 @@
     margin-top: 12px !important;
   }
 }
+@media (max-width: 768px){
+  .slicknav_menu{
+    top: calc(env(safe-area-inset-top) + 18px) !important;
+  }
+}
