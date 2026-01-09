@@ -29,9 +29,9 @@
 /* Mobile */
 @media (max-width: 768px){
   .header-logo{
-    max-width: 350px;
-    margin-top: -10px;
+    transform: translateY(20px) !important; /* + = weiter runter */
   }
+  
   .header-logo-image{
     height: 85px !important;
   }
