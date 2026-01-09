@@ -476,16 +476,21 @@
 }
 
 /* ===========================================
-   MOBILE FIX V6 - FINAL FINAL
+   MOBILE FIX - KOMPLETT NEU GESCHRIEBEN
    Desktop bleibt 100% unverändert!
    =========================================== */
 
-/* ===== HEADER MOBILE - Logo auf Höhe vom Burger ===== */
+/* ===== HEADER MOBILE - Logo SICHTBAR und richtig platziert ===== */
 @media (max-width: 768px){
   
+  /* Header - VIEL MEHR Platz für Logo */
   #header{
-    padding: 10px 0 !important;
+    padding: 0 !important;
     position: relative !important;
+    min-height: 110px !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: visible !important;
   }
   
   #header .container{
@@ -511,19 +516,22 @@
     align-items: center !important;
   }
   
-  /* LOGO - Auf richtiger Höhe wie Burger */
+  /* LOGO - Mit viel Padding, nicht abgeschnitten */
   .header-logo{
+    max-width: 100% !important;
     margin: 0 auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 8px 0 !important;
+    padding: 25px 0 !important;
+    position: relative !important;
   }
   
   .header-logo-image{
-    height: 65px !important;
+    height: 55px !important;
     width: auto !important;
     margin: 0 !important;
+    display: block !important;
   }
   
   /* Navigation ausblenden */
@@ -531,7 +539,7 @@
     display: none !important;
   }
   
-  /* BURGER MENÜ - Auf gleicher Höhe wie Logo */
+  /* BURGER MENÜ - Gleiche Höhe wie Logo */
   #header::after{
     content: '☰' !important;
     position: absolute !important;
@@ -547,18 +555,19 @@
   }
 }
 
-/* ===== PRODUCT STICKY BAR - Nicht mitfliegen (ausblenden) ===== */
+/* ===== PRODUCT STICKY - Ausblenden ===== */
 @media (max-width: 768px){
   #product-sticky{
     display: none !important;
   }
 }
 
-/* ===== PRODUCT HERO - Struktur wie Safari ===== */
+/* ===== PRODUCT HERO - kartx12™ näher am Logo ===== */
 @media (max-width: 768px){
   
+  /* NOCH weniger Abstand zum Logo */
   #product-hero{
-    margin-top: 30px !important;
+    margin-top: 5px !important;
     padding-top: 0 !important;
   }
   
@@ -572,7 +581,7 @@
     padding: 0 15px !important;
   }
 
-  /* NAME (kartx12™) */
+  /* NAME - kartx12™ */
   #product-hero .ph-h-name{
     font-size: 28px !important;
     margin: 0 !important;
@@ -582,7 +591,7 @@
     order: 1 !important;
   }
 
-  /* PREIS VERSTECKEN auf Mobile */
+  /* PREIS VERSTECKEN */
   #product-hero .ph-h-price{
     display: none !important;
   }
@@ -592,42 +601,49 @@
     display: none !important;
   }
 
-  /* BUTTONS unter dem Namen - NEBENEINANDER */
+  /* BUTTONS - Nebeneinander */
   #product-hero .ph-h-buttons{
     display: flex !important;
     flex-direction: row !important;
-    gap: 10px !important;
+    gap: 12px !important;
     width: 100% !important;
-    max-width: 350px !important;
+    max-width: 360px !important;
     margin: 0 auto !important;
     order: 2 !important;
   }
 
+  /* Alle Buttons Base */
   #product-hero .ph-h-buttons .header-button{
     flex: 1 !important;
     text-align: center !important;
-    padding: 13px 15px !important;
+    padding: 14px 16px !important;
     margin: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     line-height: 1.3 !important;
     font-size: 15px !important;
-    -webkit-appearance: none !important;
-    appearance: none !important;
+    font-weight: 600 !important;
     white-space: nowrap !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
   }
-  
-  /* Produktvergleich Button - MIT RAHMEN */
+
+  /* PRODUKTVERGLEICH - WEISS mit schwarzem Rahmen */
   #product-hero .ph-h-buttons .header-button.compare{
-    background: transparent !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
     border: 2px solid #000000 !important;
     color: #000000 !important;
   }
   
-  /* Kaufen Button - GEFÜLLT (bleibt wie original) */
+  /* KAUFEN - SCHWARZ mit weißer Schrift */
   #product-hero .ph-h-buttons .header-button.buy{
     background: #000000 !important;
+    background-color: #000000 !important;
     border: 2px solid #000000 !important;
     color: #ffffff !important;
   }
@@ -637,7 +653,7 @@
     margin-top: 25px !important;
   }
 
-  /* Preis im Content auch verstecken */
+  /* Preis im Content verstecken */
   #product-hero .ph-c-price{
     display: none !important;
   }
@@ -655,14 +671,12 @@
     justify-content: center !important;
   }
 
-  /* Product Color Title */
   #product-hero .product-colour-title{
     margin-top: 18px !important;
     font-size: 19px !important;
     text-align: center !important;
   }
 
-  /* Text */
   #product-hero .ph-c-blurb{
     text-align: center !important;
     padding: 0 20px !important;
@@ -670,19 +684,22 @@
     line-height: 1.65 !important;
   }
   
-  /* Inline-Block-Fix Blöcke */
   #product-hero .ph-header .inline-block-fix{
     width: 100% !important;
     display: block !important;
   }
 }
 
-/* ===== BROWSER-KOMPATIBILITÄT - Safari wie Chrome ===== */
+/* ===== BROWSER-KOMPATIBILITÄT ===== */
 @media (max-width: 768px){
   
-  /* Webkit Fix für einheitliche Darstellung */
   *{
     -webkit-text-size-adjust: 100% !important;
+  }
+  
+  body{
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
   }
   
   #header,
@@ -690,22 +707,9 @@
     -webkit-box-sizing: border-box !important;
     box-sizing: border-box !important;
   }
-  
-  .header-button{
-    -webkit-tap-highlight-color: transparent !important;
-    -webkit-appearance: none !important;
-    appearance: none !important;
-    border: 1px solid transparent !important;
-  }
-  
-  /* Safari Font Rendering Fix */
-  body{
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
-  }
 }
 
-/* ===== DESKTOP = KEINE ÄNDERUNGEN ===== */
+/* ===== DESKTOP BLEIBT UNVERÄNDERT ===== */
 @media (min-width: 769px) {
-  /* Desktop bleibt komplett original */
+  /* Keine Änderungen auf Desktop */
 }
