@@ -580,21 +580,21 @@
   }
 }
 /* ===========================================
-   MOBILE PATCH - Einfach unten anfügen!
-   Behebt: Header, Product Hero, Video Banner
+   MOBILE PATCH V2 - Einfach unten anfügen!
    =========================================== */
 
-/* ===== 1. HEADER MOBILE - Logo zentriert über Content ===== */
+/* ===== 1. HEADER MOBILE - Logo oben mittig + Burger rechts ===== */
 @media (max-width: 768px){
   #header{
     text-align: center !important;
-    padding-bottom: 20px !important;
+    padding: 15px 0 10px 0 !important;
+    position: relative !important;
   }
   
   #header .container{
     display: flex !important;
     justify-content: center !important;
-    align-items: center !important;
+    align-items: flex-start !important;
   }
   
   #header .row{
@@ -618,7 +618,7 @@
   }
   
   .header-logo-image{
-    height: 120px !important;
+    height: 100px !important;
     margin: 0 auto !important;
   }
   
@@ -626,15 +626,28 @@
   #header .col-lg-10{
     display: none !important;
   }
+  
+  /* Burger Menü rechts oben */
+  #header::after{
+    content: '☰' !important;
+    position: absolute !important;
+    right: 20px !important;
+    top: 20px !important;
+    font-size: 32px !important;
+    color: #000000 !important;
+    font-weight: 300 !important;
+    cursor: pointer !important;
+    z-index: 1000 !important;
+  }
 }
 
-/* ===== 2. PRODUCT HERO - Saubere Hierarchie ===== */
+/* ===== 2. PRODUCT HERO - Optimierte Hierarchie ===== */
 @media (max-width: 768px){
   
-  /* Mehr Abstand nach oben */
+  /* Weniger Abstand nach oben */
   #product-hero{
-    margin-top: 30px !important;
-    padding-top: 20px !important;
+    margin-top: 15px !important;
+    padding-top: 10px !important;
   }
   
   /* Header strukturiert */
@@ -643,52 +656,43 @@
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    gap: 15px !important;
-    margin-bottom: 25px !important;
+    gap: 12px !important;
+    margin-bottom: 20px !important;
   }
 
-  /* Titel */
+  /* Titel KLEINER als Logo */
   #product-hero .ph-h-name{
-    font-size: 32px !important;
-    margin: 0 0 8px 0 !important;
+    font-size: 24px !important;
+    margin: 0 0 5px 0 !important;
     line-height: 1.1 !important;
     text-align: center !important;
     width: 100% !important;
+    font-weight: 700 !important;
   }
 
   /* Preis UNTER Titel */
   #product-hero .ph-h-price{
-    font-size: 18px !important;
-    margin: 0 0 15px 0 !important;
+    font-size: 16px !important;
+    margin: 0 0 12px 0 !important;
     text-align: center !important;
     width: 100% !important;
     color: #c85d85 !important;
     font-weight: 600 !important;
   }
 
-  /* Farbkreise */
+  /* Farbkreise IM HEADER VERSTECKEN */
   #product-hero .ph-h-swatch-container{
-    order: 3 !important;
-    margin: 0 0 15px 0 !important;
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
-  }
-  
-  #product-hero .product-swatch{
-    display: flex !important;
-    gap: 12px !important;
-    justify-content: center !important;
+    display: none !important;
   }
 
-  /* Buttons untereinander */
+  /* Buttons untereinander - TEXT ZENTRIERT */
   #product-hero .ph-h-buttons{
     order: 4 !important;
     display: flex !important;
     flex-direction: column !important;
     gap: 10px !important;
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 280px !important;
     margin: 0 auto !important;
   }
 
@@ -697,18 +701,34 @@
     text-align: center !important;
     padding: 12px 20px !important;
     margin: 0 !important;
-    display: block !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     white-space: normal !important;
+    line-height: 1.3 !important;
   }
 
   /* Content */
   #product-hero .ph-content{
-    margin-top: 20px !important;
+    margin-top: 15px !important;
   }
 
   /* Doppelten Preis verstecken */
   #product-hero .ph-c-price{
     display: none !important;
+  }
+
+  /* Farbkreise UNTEN IM CONTENT BEHALTEN */
+  #product-hero .ph-c-swatch-container{
+    display: flex !important;
+    justify-content: center !important;
+    margin: 20px 0 !important;
+  }
+  
+  #product-hero .ph-c-swatch-container .product-swatch{
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: center !important;
   }
 
   /* Product Color Title */
@@ -765,4 +785,4 @@
   }
 }
 
-/* ===== ENDE MOBILE PATCH ===== */
+/* ===== ENDE MOBILE PATCH V2 ===== */
