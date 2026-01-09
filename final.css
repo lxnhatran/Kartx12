@@ -483,11 +483,11 @@
 /* ===== HEADER MOBILE - Logo SICHTBAR und richtig platziert ===== */
 @media (max-width: 768px){
   
-  /* Header - MAXIMALER Platz */
+  /* Header - EXTREMER Platz */
   #header{
     padding: 0 !important;
     position: relative !important;
-    min-height: 150px !important;
+    min-height: 180px !important;
     display: flex !important;
     align-items: center !important;
     overflow: visible !important;
@@ -516,14 +516,14 @@
     align-items: center !important;
   }
   
-  /* LOGO - MAXIMALES Padding */
+  /* LOGO - EXTREMES Padding */
   .header-logo{
     max-width: 100% !important;
     margin: 0 auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 50px 0 !important;
+    padding: 70px 0 !important;
     position: relative !important;
   }
   
