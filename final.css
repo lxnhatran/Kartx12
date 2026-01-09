@@ -476,18 +476,17 @@
 }
 
 /* ===========================================
-   MOBILE FIX - KOMPLETT NEU GESCHRIEBEN
+   MOBILE FIX - NEU GESCHRIEBEN MIT RICHTIGEN WERTEN
    Desktop bleibt 100% unverändert!
    =========================================== */
 
-/* ===== HEADER MOBILE - Logo SICHTBAR und richtig platziert ===== */
+/* ===== HEADER MOBILE ===== */
 @media (max-width: 768px){
   
-  /* Header - EXTREMER Platz */
   #header{
     padding: 0 !important;
     position: relative !important;
-    min-height: 180px !important;
+    min-height: 200px !important;
     display: flex !important;
     align-items: center !important;
     overflow: visible !important;
@@ -516,14 +515,13 @@
     align-items: center !important;
   }
   
-  /* LOGO - EXTREMES Padding */
   .header-logo{
     max-width: 100% !important;
     margin: 0 auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 70px 0 !important;
+    padding: 90px 0 !important;
     position: relative !important;
   }
   
@@ -534,12 +532,10 @@
     display: block !important;
   }
   
-  /* Navigation ausblenden */
   #header .col-lg-10{
     display: none !important;
   }
   
-  /* BURGER MENÜ - Gleiche Höhe wie Logo */
   #header::after{
     content: '☰' !important;
     position: absolute !important;
@@ -555,17 +551,14 @@
   }
 }
 
-/* ===== PRODUCT STICKY - Ausblenden ===== */
 @media (max-width: 768px){
   #product-sticky{
     display: none !important;
   }
 }
 
-/* ===== PRODUCT HERO - kartx12™ näher am Logo ===== */
 @media (max-width: 768px){
   
-  /* NOCH weniger Abstand zum Logo */
   #product-hero{
     margin-top: 5px !important;
     padding-top: 0 !important;
@@ -581,7 +574,6 @@
     padding: 0 15px !important;
   }
 
-  /* NAME - kartx12™ */
   #product-hero .ph-h-name{
     font-size: 28px !important;
     margin: 0 !important;
@@ -591,17 +583,14 @@
     order: 1 !important;
   }
 
-  /* PREIS VERSTECKEN */
   #product-hero .ph-h-price{
     display: none !important;
   }
 
-  /* Farbkreise oben WEG */
   #product-hero .ph-h-swatch-container{
     display: none !important;
   }
 
-  /* BUTTONS - Nebeneinander */
   #product-hero .ph-h-buttons{
     display: flex !important;
     flex-direction: row !important;
@@ -612,7 +601,6 @@
     order: 2 !important;
   }
 
-  /* Alle Buttons Base */
   #product-hero .ph-h-buttons .header-button{
     flex: 1 !important;
     text-align: center !important;
@@ -632,7 +620,6 @@
     appearance: none !important;
   }
 
-  /* PRODUKTVERGLEICH - WEISS mit schwarzem Rahmen */
   #product-hero .ph-h-buttons .header-button.compare{
     background: #ffffff !important;
     background-color: #ffffff !important;
@@ -640,7 +627,6 @@
     color: #000000 !important;
   }
   
-  /* KAUFEN - SCHWARZ mit weißer Schrift */
   #product-hero .ph-h-buttons .header-button.buy{
     background: #000000 !important;
     background-color: #000000 !important;
@@ -648,17 +634,14 @@
     color: #ffffff !important;
   }
 
-  /* Content */
   #product-hero .ph-content{
     margin-top: 25px !important;
   }
 
-  /* Preis im Content verstecken */
   #product-hero .ph-c-price{
     display: none !important;
   }
 
-  /* Farbkreise unten BEHALTEN */
   #product-hero .ph-c-swatch-container{
     display: flex !important;
     justify-content: center !important;
@@ -690,7 +673,6 @@
   }
 }
 
-/* ===== BROWSER-KOMPATIBILITÄT ===== */
 @media (max-width: 768px){
   
   *{
@@ -709,7 +691,6 @@
   }
 }
 
-/* ===== DESKTOP BLEIBT UNVERÄNDERT ===== */
 @media (min-width: 769px) {
-  /* Keine Änderungen auf Desktop */
+  /* Desktop bleibt original */
 }
