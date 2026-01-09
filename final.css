@@ -642,10 +642,10 @@
 }
 @media (max-width: 768px){
   #header{
-    padding-top: calc(env(safe-area-inset-top) + 18px) !important;
+    padding-top: calc(env(safe-area-inset-top) + 60px) !important;
   }
 
   .header-logo{
-    margin-top: 12px !important;
+    margin-top: 40px !important;
   }
 }
