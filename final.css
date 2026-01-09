@@ -640,3 +640,12 @@
     margin-top: 8px !important;
   }
 }
+@media (max-width: 768px){
+  #header{
+    padding-top: calc(env(safe-area-inset-top) + 18px) !important;
+  }
+
+  .header-logo{
+    margin-top: 12px !important;
+  }
+}
