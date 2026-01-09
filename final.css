@@ -439,13 +439,13 @@
     align-items: center !important;
   }
   
-  /* LOGO - AUF GLEICHER HÖHE WIE BURGER */
+  /* LOGO - Auf richtiger Höhe wie Burger */
   .header-logo{
     margin: 0 auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 0 !important;
+    padding: 8px 0 !important;
   }
   
   .header-logo-image{
@@ -544,6 +544,20 @@
     -webkit-appearance: none !important;
     appearance: none !important;
     white-space: nowrap !important;
+  }
+  
+  /* Produktvergleich Button - MIT RAHMEN */
+  #product-hero .ph-h-buttons .header-button.compare{
+    background: transparent !important;
+    border: 2px solid #000000 !important;
+    color: #000000 !important;
+  }
+  
+  /* Kaufen Button - GEFÜLLT (bleibt wie original) */
+  #product-hero .ph-h-buttons .header-button.buy{
+    background: #000000 !important;
+    border: 2px solid #000000 !important;
+    color: #ffffff !important;
   }
 
   /* Content */
