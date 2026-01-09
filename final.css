@@ -554,3 +554,84 @@
     padding: 10px 0 !important;
   }
 }
+
+/* =========================================
+   MOBILE PATCH: Logo wieder sichtbar + Burger wieder da
+   (SlickNav wenn vorhanden, sonst Fallback)
+   ========================================= */
+@media (max-width: 768px){
+
+  /* 1) Header bekommt wieder "Luft" oben (damit Logo nicht rausfliegt) */
+  #header{
+    padding-top: calc(env(safe-area-inset-top) + 14px) !important;
+    padding-bottom: 12px !important;
+    min-height: auto !important;
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  /* 2) Negative global margins killen -> Logo bleibt im Bild */
+  .header-logo{
+    margin-top: 0 !important;          /* killt -20px */
+    padding: 0 !important;
+    transform: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  .header-logo-image{
+    height: 60px !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+  /* 3) Layout links/rechts */
+  #header .row.position-relative{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  #header .col-lg-2{
+    flex: 0 0 auto !important;
+    max-width: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  /* 4) ECHTER Burger (SlickNav) sichtbar machen, falls vorhanden */
+  .slicknav_menu{
+    display: block !important;
+    position: absolute !important;
+    right: 14px !important;
+    top: calc(env(safe-area-inset-top) + 14px) !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 2000 !important;
+  }
+  .slicknav_btn{
+    float: none !important;
+    margin: 0 !important;
+  }
+
+  /* 5) Fallback-Burger (nur wenn SlickNav NICHT existiert) */
+  #header::after{
+    content: '☰' !important;
+    position: absolute !important;
+    right: 18px !important;
+    top: calc(env(safe-area-inset-top) + 26px) !important;
+    transform: translateY(-50%) !important;
+    font-size: 28px !important;
+    line-height: 1 !important;
+    z-index: 1500 !important;
+    cursor: pointer !important;
+  }
+
+  /* iOS Safari kann :has -> wenn SlickNav da ist, Fake-Burger aus */
+  #header:has(.slicknav_menu)::after{
+    content: none !important;
+  }
+}
