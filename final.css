@@ -579,3 +579,190 @@
     display: none !important;
   }
 }
+/* ===========================================
+   MOBILE PATCH - Einfach unten anfügen!
+   Behebt: Header, Product Hero, Video Banner
+   =========================================== */
+
+/* ===== 1. HEADER MOBILE - Logo zentriert über Content ===== */
+@media (max-width: 768px){
+  #header{
+    text-align: center !important;
+    padding-bottom: 20px !important;
+  }
+  
+  #header .container{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  #header .row{
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  
+  #header .col-lg-2{
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  
+  .header-logo{
+    margin: 0 auto !important;
+    display: block !important;
+    text-align: center !important;
+    position: static !important;
+    top: 0 !important;
+  }
+  
+  .header-logo-image{
+    height: 120px !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Navigation ausblenden */
+  #header .col-lg-10{
+    display: none !important;
+  }
+}
+
+/* ===== 2. PRODUCT HERO - Saubere Hierarchie ===== */
+@media (max-width: 768px){
+  
+  /* Mehr Abstand nach oben */
+  #product-hero{
+    margin-top: 30px !important;
+    padding-top: 20px !important;
+  }
+  
+  /* Header strukturiert */
+  #product-hero .ph-header{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 15px !important;
+    margin-bottom: 25px !important;
+  }
+
+  /* Titel */
+  #product-hero .ph-h-name{
+    font-size: 32px !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.1 !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Preis UNTER Titel */
+  #product-hero .ph-h-price{
+    font-size: 18px !important;
+    margin: 0 0 15px 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+    color: #c85d85 !important;
+    font-weight: 600 !important;
+  }
+
+  /* Farbkreise */
+  #product-hero .ph-h-swatch-container{
+    order: 3 !important;
+    margin: 0 0 15px 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  
+  #product-hero .product-swatch{
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: center !important;
+  }
+
+  /* Buttons untereinander */
+  #product-hero .ph-h-buttons{
+    order: 4 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
+
+  #product-hero .ph-h-buttons .header-button{
+    width: 100% !important;
+    text-align: center !important;
+    padding: 12px 20px !important;
+    margin: 0 !important;
+    display: block !important;
+    white-space: normal !important;
+  }
+
+  /* Content */
+  #product-hero .ph-content{
+    margin-top: 20px !important;
+  }
+
+  /* Doppelten Preis verstecken */
+  #product-hero .ph-c-price{
+    display: none !important;
+  }
+
+  /* Product Color Title */
+  #product-hero .product-colour-title{
+    margin-top: 15px !important;
+    font-size: 18px !important;
+    text-align: center !important;
+  }
+
+  /* Text */
+  #product-hero .ph-c-blurb{
+    text-align: center !important;
+    padding: 0 20px !important;
+    margin-top: 20px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Inline-Block-Fix Blöcke auf volle Breite */
+  #product-hero .ph-header .inline-block-fix{
+    width: 100% !important;
+    display: block !important;
+  }
+}
+
+/* ===== 3. VIDEO BANNER - Kompakter ===== */
+.video-section{
+  padding: 50px 0 50px 0 !important;
+}
+
+.vs-title{
+  margin-bottom: 30px !important;
+}
+
+@media (max-width: 768px){
+  .video-section{
+    padding: 35px 15px 35px 15px !important;
+  }
+  
+  .vs-title{
+    font-size: 28px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+/* ===== 4. STICKY BAR - Preis richtig anzeigen ===== */
+@media (max-width: 768px){
+  #product-sticky .ps-c-price{
+    font-size: 14px !important;
+    margin-left: 10px !important;
+  }
+  
+  #product-sticky .ps-c-name{
+    font-size: 18px !important;
+  }
+}
+
+/* ===== ENDE MOBILE PATCH ===== */
