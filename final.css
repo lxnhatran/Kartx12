@@ -404,26 +404,28 @@
 }
 
 /* ===========================================
-   MOBILE PATCH V2 - Einfach unten anfügen!
+   FINAL MOBILE FIX - NUR MOBILE ANSICHT
+   Desktop bleibt 100% unverändert!
    =========================================== */
 
-/* ===== 1. HEADER MOBILE - Logo oben mittig + Burger rechts ===== */
+/* ===== 1. HEADER MOBILE - Logo höher + Burger rechts ===== */
 @media (max-width: 768px){
+  
   #header{
-    text-align: center !important;
-    padding: 15px 0 10px 0 !important;
+    padding: 10px 0 !important;
     position: relative !important;
   }
   
   #header .container{
     display: flex !important;
     justify-content: center !important;
-    align-items: flex-start !important;
+    align-items: center !important;
   }
   
   #header .row{
     width: 100% !important;
     justify-content: center !important;
+    align-items: center !important;
   }
   
   #header .col-lg-2{
@@ -433,16 +435,15 @@
     justify-content: center !important;
   }
   
+  /* LOGO HÖHER */
   .header-logo{
-    margin: 0 auto !important;
+    margin: -20px auto 0 auto !important;
     display: block !important;
     text-align: center !important;
-    position: static !important;
-    top: 0 !important;
   }
   
   .header-logo-image{
-    height: 100px !important;
+    height: 90px !important;
     margin: 0 auto !important;
   }
   
@@ -451,12 +452,13 @@
     display: none !important;
   }
   
-  /* Burger Menü rechts oben */
+  /* BURGER MENÜ RECHTS OBEN - SCHWARZ */
   #header::after{
     content: '☰' !important;
     position: absolute !important;
     right: 20px !important;
-    top: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
     font-size: 32px !important;
     color: #000000 !important;
     font-weight: 300 !important;
@@ -465,14 +467,8 @@
   }
 }
 
-/* ===== 2. PRODUCT HERO - Optimierte Hierarchie ===== */
+/* ===== 2. PRODUCT HERO - Farbkreise oben raus ===== */
 @media (max-width: 768px){
-  
-  /* Weniger Abstand nach oben */
-  #product-hero{
-    margin-top: 15px !important;
-    padding-top: 10px !important;
-  }
   
   /* Header strukturiert */
   #product-hero .ph-header{
@@ -484,7 +480,7 @@
     margin-bottom: 20px !important;
   }
 
-  /* Titel KLEINER als Logo */
+  /* Titel */
   #product-hero .ph-h-name{
     font-size: 24px !important;
     margin: 0 0 5px 0 !important;
@@ -500,18 +496,16 @@
     margin: 0 0 12px 0 !important;
     text-align: center !important;
     width: 100% !important;
-    color: #c85d85 !important;
     font-weight: 600 !important;
   }
 
-  /* Farbkreise IM HEADER VERSTECKEN */
+  /* FARBKREISE IM HEADER KOMPLETT VERSTECKEN */
   #product-hero .ph-h-swatch-container{
     display: none !important;
   }
 
-  /* Buttons untereinander - TEXT ZENTRIERT */
+  /* BUTTONS - TEXT ZENTRIERT */
   #product-hero .ph-h-buttons{
-    order: 4 !important;
     display: flex !important;
     flex-direction: column !important;
     gap: 10px !important;
@@ -529,7 +523,8 @@
     align-items: center !important;
     justify-content: center !important;
     white-space: normal !important;
-    line-height: 1.3 !important;
+    line-height: 1.4 !important;
+    font-size: 15px !important;
   }
 
   /* Content */
@@ -542,7 +537,7 @@
     display: none !important;
   }
 
-  /* Farbkreise UNTEN IM CONTENT BEHALTEN */
+  /* Farbkreise UNTEN IM CONTENT BEHALTEN (da sind sie bereits) */
   #product-hero .ph-c-swatch-container{
     display: flex !important;
     justify-content: center !important;
@@ -577,36 +572,25 @@
   }
 }
 
-/* ===== 3. VIDEO BANNER - Kompakter ===== */
-.video-section{
-  padding: 50px 0 50px 0 !important;
-}
-
-.vs-title{
-  margin-bottom: 30px !important;
-}
-
+/* ===== 3. STICKY BAR - Text zentriert ===== */
 @media (max-width: 768px){
-  .video-section{
-    padding: 35px 15px 35px 15px !important;
-  }
-  
-  .vs-title{
-    font-size: 28px !important;
-    margin-bottom: 20px !important;
-  }
-}
-
-/* ===== 4. STICKY BAR - Preis richtig anzeigen ===== */
-@media (max-width: 768px){
+  #product-sticky .ps-c-name,
   #product-sticky .ps-c-price{
-    font-size: 14px !important;
-    margin-left: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
-  #product-sticky .ps-c-name{
-    font-size: 18px !important;
+  #product-sticky .ps-c-buttons .header-button{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.4 !important;
+    padding: 10px 15px !important;
   }
 }
 
-/* ===== ENDE MOBILE PATCH V2 ===== */
+/* ===== DESKTOP BLEIBT UNVERÄNDERT ===== */
+@media (min-width: 769px) {
+  /* Nichts wird auf Desktop angewendet */
+}
