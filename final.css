@@ -404,16 +404,17 @@
 }
 
 /* ===========================================
-   FINAL MOBILE FIX - NUR MOBILE ANSICHT
+   MOBILE FIX V3 - FINAL
    Desktop bleibt 100% unverändert!
    =========================================== */
 
-/* ===== 1. HEADER MOBILE - Logo höher + Burger rechts ===== */
+/* ===== HEADER MOBILE - Logo oben + Burger gleiche Höhe ===== */
 @media (max-width: 768px){
   
   #header{
-    padding: 10px 0 !important;
+    padding: 8px 0 !important;
     position: relative !important;
+    min-height: 70px !important;
   }
   
   #header .container{
@@ -425,7 +426,6 @@
   #header .row{
     width: 100% !important;
     justify-content: center !important;
-    align-items: center !important;
   }
   
   #header .col-lg-2{
@@ -435,15 +435,16 @@
     justify-content: center !important;
   }
   
-  /* LOGO VIEL HÖHER - Keine Überschneidung */
+  /* LOGO - Kompakt und oben */
   .header-logo{
-    margin: -35px auto 0 auto !important;
+    margin: 0 auto !important;
     display: block !important;
     text-align: center !important;
+    padding-top: 5px !important;
   }
   
   .header-logo-image{
-    height: 80px !important;
+    height: 65px !important;
     margin: 0 auto !important;
   }
   
@@ -452,14 +453,14 @@
     display: none !important;
   }
   
-  /* BURGER MENÜ RECHTS OBEN - SCHWARZ */
+  /* BURGER MENÜ - Gleiche Höhe wie Logo-Mitte */
   #header::after{
     content: '☰' !important;
     position: absolute !important;
     right: 20px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    font-size: 32px !important;
+    font-size: 30px !important;
     color: #000000 !important;
     font-weight: 300 !important;
     cursor: pointer !important;
@@ -467,130 +468,116 @@
   }
 }
 
-/* ===== 2. PRODUCT HERO - Farbkreise oben raus ===== */
+/* ===== PRODUCT HERO - Abstand + keine Farbkreise oben ===== */
 @media (max-width: 768px){
   
-  /* Header strukturiert */
+  #product-hero{
+    margin-top: 30px !important;
+  }
+  
   #product-hero .ph-header{
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
     gap: 12px !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 25px !important;
   }
 
-  /* Titel */
   #product-hero .ph-h-name{
-    font-size: 24px !important;
-    margin: 0 0 5px 0 !important;
-    line-height: 1.1 !important;
+    font-size: 26px !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
     text-align: center !important;
-    width: 100% !important;
     font-weight: 700 !important;
   }
 
-  /* Preis UNTER Titel */
   #product-hero .ph-h-price{
-    font-size: 16px !important;
-    margin: 0 0 12px 0 !important;
+    font-size: 17px !important;
+    margin: 8px 0 15px 0 !important;
     text-align: center !important;
-    width: 100% !important;
     font-weight: 600 !important;
   }
 
-  /* FARBKREISE IM HEADER KOMPLETT VERSTECKEN */
+  /* Farbkreise oben WEG */
   #product-hero .ph-h-swatch-container{
     display: none !important;
   }
 
-  /* BUTTONS - TEXT ZENTRIERT */
+  /* Buttons - Zentrierter Text */
   #product-hero .ph-h-buttons{
     display: flex !important;
     flex-direction: column !important;
-    gap: 10px !important;
+    gap: 12px !important;
     width: 100% !important;
-    max-width: 280px !important;
+    max-width: 300px !important;
     margin: 0 auto !important;
   }
 
   #product-hero .ph-h-buttons .header-button{
     width: 100% !important;
     text-align: center !important;
-    padding: 12px 20px !important;
+    padding: 14px 20px !important;
     margin: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    white-space: normal !important;
-    line-height: 1.4 !important;
-    font-size: 15px !important;
+    line-height: 1.3 !important;
+    font-size: 16px !important;
   }
 
-  /* Content */
   #product-hero .ph-content{
-    margin-top: 15px !important;
+    margin-top: 20px !important;
   }
 
-  /* Doppelten Preis verstecken */
   #product-hero .ph-c-price{
     display: none !important;
   }
 
-  /* Farbkreise UNTEN IM CONTENT BEHALTEN (da sind sie bereits) */
+  /* Farbkreise unten BEHALTEN */
   #product-hero .ph-c-swatch-container{
     display: flex !important;
     justify-content: center !important;
-    margin: 20px 0 !important;
+    margin: 25px 0 !important;
   }
   
   #product-hero .ph-c-swatch-container .product-swatch{
     display: flex !important;
-    gap: 12px !important;
+    gap: 14px !important;
     justify-content: center !important;
   }
 
-  /* Product Color Title */
   #product-hero .product-colour-title{
-    margin-top: 15px !important;
-    font-size: 18px !important;
+    margin-top: 18px !important;
+    font-size: 19px !important;
     text-align: center !important;
   }
 
-  /* Text */
   #product-hero .ph-c-blurb{
     text-align: center !important;
     padding: 0 20px !important;
-    margin-top: 20px !important;
-    line-height: 1.6 !important;
+    margin-top: 25px !important;
+    line-height: 1.65 !important;
   }
   
-  /* Inline-Block-Fix Blöcke auf volle Breite */
   #product-hero .ph-header .inline-block-fix{
     width: 100% !important;
     display: block !important;
   }
 }
 
-/* ===== 3. STICKY BAR - Text zentriert ===== */
+/* ===== STICKY BAR ===== */
 @media (max-width: 768px){
-  #product-sticky .ps-c-name,
-  #product-sticky .ps-c-price{
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-  
   #product-sticky .ps-c-buttons .header-button{
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    line-height: 1.4 !important;
-    padding: 10px 15px !important;
+    line-height: 1.3 !important;
+    padding: 10px 16px !important;
   }
 }
 
-/* ===== DESKTOP BLEIBT UNVERÄNDERT ===== */
+/* ===== DESKTOP = KEINE ÄNDERUNGEN ===== */
 @media (min-width: 769px) {
-  /* Nichts wird auf Desktop angewendet */
+  /* Desktop bleibt original */
 }
