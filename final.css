@@ -402,3 +402,180 @@
     line-height: 1.25 !important;
   }
 }
+/* ===========================================
+   MOBILE FIXES - NUR FÜR MOBILE ANSICHT
+   Desktop bleibt unverändert!
+   =========================================== */
+
+/* ===== 1. HEADER MOBILE - Logo mittig, Burger rechts ===== */
+@media (max-width: 768px) {
+  
+  /* Header Container */
+  #header {
+    padding: 15px 0 !important;
+  }
+
+  #header .container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+  }
+
+  #header .row {
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Logo MITTIG */
+  #header .col-lg-2 {
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+  }
+
+  #header .header-logo {
+    margin: 0 auto !important;
+    position: static !important;
+    top: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  #header .header-logo-image {
+    height: 100px !important;
+    width: auto !important;
+  }
+
+  /* Burger RECHTS (fixiert am Bildschirmrand) */
+  .mobile-burger {
+    display: flex !important;
+    position: fixed !important;
+    right: 16px !important;
+    top: 20px !important;
+    z-index: 100000 !important;
+    background: transparent !important;
+    border: 0 !important;
+    padding: 10px !important;
+    cursor: pointer !important;
+  }
+
+  .mobile-burger svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .mobile-burger svg rect {
+    fill: #e0e0e0 !important;
+  }
+
+  /* Desktop-Navigation ausblenden */
+  #header nav,
+  #header .menu-primary-menu-container {
+    display: none !important;
+  }
+
+  #header .col-lg-10 {
+    display: none !important;
+  }
+}
+
+/* ===== 2. PRODUCT HERO - Farben & Text nach oben ===== */
+@media (max-width: 768px) {
+  
+  /* Farbkreise (Swatches) nach oben */
+  #product-hero .ph-h-swatch-container {
+    margin-top: -10px !important;
+  }
+
+  #product-hero .ph-c-swatch-container {
+    margin-top: 15px !important;
+  }
+
+  /* Product Title (z.B. "Sugar Drift Lilac") nach oben */
+  #product-hero .product-colour-title {
+    margin-top: -15px !important;
+  }
+
+  /* Gesamter Content-Bereich etwas nach oben */
+  #product-hero .ph-content {
+    margin-top: -20px !important;
+  }
+
+  /* Hero Image etwas höher */
+  #product-hero .ph-c-wrap {
+    margin-top: -15px !important;
+  }
+}
+
+/* ===== 3. KARTX UP - Content nach Mitte schieben ===== */
+@media (max-width: 992px) {
+  
+  /* Container zentrieren */
+  #kartx-up .kartx-up__container {
+    padding: 40px 20px !important;
+    text-align: center !important;
+  }
+
+  /* Alle Elemente zentriert */
+  #kartx-up .kartx-up__left {
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  /* Pretitle zentriert */
+  #kartx-up .kartx-up__pretitle {
+    text-align: center !important;
+    margin: 0 auto 16px !important;
+  }
+
+  /* Title zentriert */
+  #kartx-up .kartx-up__title {
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 auto 16px !important;
+  }
+
+  /* List zentriert */
+  #kartx-up .kartx-up__list {
+    text-align: center !important;
+    margin: 0 auto 20px !important;
+  }
+
+  /* Button zentriert */
+  #kartx-up .kartx-up__btn {
+    margin: 0 auto 16px !important;
+    display: inline-flex !important;
+  }
+
+  /* Badges zentriert */
+  #kartx-up .kartx-up__download {
+    justify-content: center !important;
+    align-self: center !important;
+    margin: 0 auto !important;
+  }
+
+  /* Visual Image zentriert */
+  #kartx-up .kartx-up__right {
+    justify-content: center !important;
+    margin-top: 30px !important;
+  }
+
+  #kartx-up .kartx-up__visual {
+    margin: 0 auto !important;
+  }
+}
+
+/* ===== DESKTOP BLEIBT UNVERÄNDERT ===== */
+@media (min-width: 769px) {
+  /* Alle Mobile-Styles werden hier NICHT angewendet */
+  .mobile-burger {
+    display: none !important;
+  }
+}
