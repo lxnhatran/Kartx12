@@ -344,12 +344,10 @@
   }
 }
 
-@media (max-width: 768px){
-  .video-section{
-    padding: 56px 0 !important;  /* z.B. 50-60px */
-  }
+.video-section{
+  background-color: #6cccdb;
+  padding: 80px 0;     /* 🔑 sorgt dafür, dass Banner sichtbar bleibt */
 }
-
 
 .vs-video{
   position: relative;
@@ -477,250 +475,82 @@
   }
 }
 
-/* ===========================================
-   MOBILE FIX - NEU GESCHRIEBEN MIT RICHTIGEN WERTEN
-   Desktop bleibt 100% unverändert!
-   =========================================== */
-
-/* ===== HEADER MOBILE ===== */
+/* =========================================
+   MOBILE HEADER LAYOUT wie Referenz:
+   Logo links + echtes Burger rechts (SlickNav)
+   NUR Layout, keine Farben
+   ========================================= */
 @media (max-width: 768px){
-  
-  #header{
-    padding: 0 !important;
-    position: relative !important;
-    min-height: 200px !important;
+
+  /* Fake-Burger AUS (falls du den noch drin hast) */
+  #header::after{ content: none !important; }
+
+  /* Rechte Spalte NICHT ausblenden (sonst verschwindet Burger) */
+  #header .col-lg-10{ display: block !important; }
+
+  /* Row als Topbar: links/rechts */
+  #header .row.position-relative{
     display: flex !important;
     align-items: center !important;
-    overflow: visible !important;
+    justify-content: space-between !important;
   }
-  
-  #header .container{
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-  }
-  
-  #header .row{
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 0 !important;
-  }
-  
+
+  /* Logo links */
   #header .col-lg-2{
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    max-width: none !important;
     display: flex !important;
-    justify-content: center !important;
     align-items: center !important;
+    justify-content: flex-start !important;
   }
-  
+
   .header-logo{
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    display: flex !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-flex !important;
     align-items: center !important;
-    justify-content: center !important;
-    padding: 90px 0 !important;
-    position: relative !important;
+    justify-content: flex-start !important;
+    transform: none !important;
   }
-  
+
   .header-logo-image{
-    height: 55px !important;
+    height: 60px !important; /* ggf. 55-70px */
     width: auto !important;
     margin: 0 !important;
     display: block !important;
   }
-  
-  #header .col-lg-10{
+
+  /* Desktop-Menü-Links aus, aber SlickNav darf bleiben */
+  #header nav#menu .menu-primary-menu-container{
     display: none !important;
   }
-  
-  #header::after{
-    content: '☰' !important;
-    position: absolute !important;
-    right: 20px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    font-size: 28px !important;
-    color: #000000 !important;
-    font-weight: 300 !important;
-    cursor: pointer !important;
-    z-index: 1000 !important;
-    line-height: 1 !important;
-  }
-}
 
-@media (max-width: 768px){
-  #product-sticky{
-    display: none !important;
+  /* SlickNav Burger rechts ausrichten */
+  .slicknav_menu{
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    background: transparent !important; /* nur Layout, keine Farbe */
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
-}
 
-@media (max-width: 768px){
-  
+  .slicknav_btn{
+    float: none !important;
+    margin: 0 !important;
+    padding: 8px 10px !important;
+  }
+
+  /* Abstand zwischen Header und dem "kartx12 + Buttons" Bereich kleiner */
   #product-hero{
-    margin-top: 5px !important;
+    margin-top: 0 !important;
     padding-top: 0 !important;
   }
-  
-  #product-hero .ph-header{
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 15px !important;
-    margin-bottom: 30px !important;
-    padding: 0 15px !important;
-  }
 
-  #product-hero .ph-h-name{
-    font-size: 28px !important;
-    margin: 0 !important;
-    line-height: 1.2 !important;
-    text-align: center !important;
-    font-weight: 700 !important;
-    order: 1 !important;
-  }
-
-  #product-hero .ph-h-price{
-    display: none !important;
-  }
-
-  #product-hero .ph-h-swatch-container{
-    display: none !important;
-  }
-
-  #product-hero .ph-h-buttons{
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 12px !important;
-    width: 100% !important;
-    max-width: 360px !important;
-    margin: 0 auto !important;
-    order: 2 !important;
-  }
-
-  #product-hero .ph-h-buttons .header-button{
-    flex: 1 !important;
-    text-align: center !important;
-    padding: 14px 16px !important;
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    line-height: 1.3 !important;
-    font-size: 15px !important;
-    font-weight: 600 !important;
-    white-space: nowrap !important;
-    border-radius: 0 !important;
-    box-sizing: border-box !important;
-    -webkit-appearance: none !important;
-    -moz-appearance: none !important;
-    appearance: none !important;
-  }
-
-  #product-hero .ph-h-buttons .header-button.compare{
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    border: 2px solid #000000 !important;
-    color: #000000 !important;
-  }
-  
-  #product-hero .ph-h-buttons .header-button.buy{
-    background: #000000 !important;
-    background-color: #000000 !important;
-    border: 2px solid #000000 !important;
-    color: #ffffff !important;
-  }
-
-  #product-hero .ph-content{
-    margin-top: 25px !important;
-  }
-
-  #product-hero .ph-c-price{
-    display: none !important;
-  }
-
-  #product-hero .ph-c-swatch-container{
-    display: flex !important;
-    justify-content: center !important;
-    margin: 25px 0 !important;
-  }
-  
-  #product-hero .ph-c-swatch-container .product-swatch{
-    display: flex !important;
-    gap: 14px !important;
-    justify-content: center !important;
-  }
-
-  #product-hero .product-colour-title{
-    margin-top: 18px !important;
-    font-size: 19px !important;
-    text-align: center !important;
-  }
-
-  #product-hero .ph-c-blurb{
-    text-align: center !important;
-    padding: 0 20px !important;
-    margin-top: 25px !important;
-    line-height: 1.65 !important;
-  }
-  
-  #product-hero .ph-header .inline-block-fix{
-    width: 100% !important;
-    display: block !important;
-  }
-}
-
-@media (max-width: 768px){
-  
-  *{
-    -webkit-text-size-adjust: 100% !important;
-  }
-  
-  body{
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
-  }
-  
-  #header,
-  #product-hero .ph-header{
-    -webkit-box-sizing: border-box !important;
-    box-sizing: border-box !important;
-  }
-}
-
-@media (min-width: 769px) {
-  /* Desktop bleibt original */
-}
-
-/* ===== MOBILE: Header sauber + Burger auf Logo-Höhe + weniger Abstand nach unten ===== */
-@media (max-width: 768px){
-
-  /* Stell hier ein, wie weit Logo+Burger runter sollen */
-  #header{ 
-    --logoShift: 18px;        /* <- höher/niedriger: z.B. 12px / 24px */
-    padding: 14px 0 !important;
-    min-height: auto !important;      /* killt 200px */
-  }
-
-  /* Logo: kein riesen Padding mehr, nur gezielt verschieben */
-  .header-logo{
-    padding: 0 !important;            /* killt 90px 0 */
-    transform: translateY(var(--logoShift)) !important;
-  }
-
-  /* Burger: exakt denselben Shift mitnehmen -> gleiche Höhe wie Logo */
-  #header::after{
-    top: calc(50% + var(--logoShift)) !important;
-  }
-
-  /* Weniger Abstand zwischen Header und dem Bereich "kartx12™" + Buttons */
-  #product-hero{
-    margin-top: 0 !important;         /* falls irgendwo was drauf liegt */
-    padding-top: 0 !important;
+  /* falls dein Header vorher künstlich hoch war */
+  #header{
+    min-height: auto !important;
+    padding: 10px 0 !important;
   }
 }
