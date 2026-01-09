@@ -475,6 +475,78 @@
   }
 }
 
+/* ===========================================
+   MOBILE FIX V6 - FINAL FINAL
+   Desktop bleibt 100% unverändert!
+   =========================================== */
+
+/* ===== HEADER MOBILE - Logo auf Höhe vom Burger ===== */
+@media (max-width: 768px){
+  
+  #header{
+    padding: 10px 0 !important;
+    position: relative !important;
+  }
+  
+  #header .container{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  
+  #header .row{
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+  }
+  
+  #header .col-lg-2{
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  /* LOGO - Auf richtiger Höhe wie Burger */
+  .header-logo{
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 0 !important;
+  }
+  
+  .header-logo-image{
+    height: 65px !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+  
+  /* Navigation ausblenden */
+  #header .col-lg-10{
+    display: none !important;
+  }
+  
+  /* BURGER MENÜ - Auf gleicher Höhe wie Logo */
+  #header::after{
+    content: '☰' !important;
+    position: absolute !important;
+    right: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 28px !important;
+    color: #000000 !important;
+    font-weight: 300 !important;
+    cursor: pointer !important;
+    z-index: 1000 !important;
+    line-height: 1 !important;
+  }
+}
+
 /* ===== PRODUCT STICKY BAR - Nicht mitfliegen (ausblenden) ===== */
 @media (max-width: 768px){
   #product-sticky{
